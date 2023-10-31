@@ -19,6 +19,7 @@ const Mail = () => {
   return (
       <div>
           <input placeholder="Your email" type="email" onBlur={emailEnteredHandler}/>
+          <br/>
           <button onClick={evaluateEmail}>Sumbit</button>
           <p>{errorMessage}</p>
       </div>

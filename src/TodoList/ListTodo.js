@@ -12,14 +12,15 @@ const ListTodo = ({Todos, setTodos}) => {
         <div>
             <ul>
                 {Todos.map((todo, index) => (
-                    <li key={todo.id} className={todo.isCompleted ? 'Hehco' : 'Pendiente'}>
+                    <li key={todo.id}>
                         {todo.name}
                         <span> </span>
 
-                        {<button onClick={() => {
-                            const updatedTodos = Todos.filter((_, i) => i !== index);
-                            setTodos(updatedTodos);
-                        }}>Eliminar</button>}
+                        <button onClick={() => {
+                            let index = Todos.indexOf(todo)
+                            Todos.splice(index, 1)
+                            setTodos([...Todos])
+                        }}>Eliminar</button>
                         <span> </span>
 
                         <button onClick={() => {
@@ -27,7 +28,9 @@ const ListTodo = ({Todos, setTodos}) => {
                         }}>Actualizar</button>
                         <span> </span>
 
-                        <span>{todo.isCompleted ? 'Hecho' : 'Pendiente'}</span>
+                        <span style={
+                                {backgroundColor: todo.isCompleted ? 'green' : 'red', color:'white', fontWeight:'bold'}
+                            }>{ todo.isCompleted ? 'Hecho' : 'Pendiente'}</span>
                     </li>
                 ))}
             </ul>
