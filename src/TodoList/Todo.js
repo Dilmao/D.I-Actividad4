@@ -3,8 +3,8 @@ import InputTodo from './InputTodo';
 import ListTodo from './ListTodo';
 
 const initialTodos = [
-    { id: "Todo 1", name: "Todo 1", isCompleted: false },
-    { id: "Todo 2", name: "Todo 2", isCompleted: false }
+    { id: 1, name: "Todo 1", isCompleted: false },
+    { id: 2, name: "Todo 2", isCompleted: false }
   ];
 
 const Todo = () => {
@@ -15,12 +15,14 @@ const Todo = () => {
         setValue(event.target.value)
     }
 
+    let contador = todos.length
+
     function addList() {
         if (value.trim() === "") {
             return;
         }
       
-          const newTodo = { id: value, name: value, isCompleted: false };
+          const newTodo = { id: contador, name: value, isCompleted: false };
           setTodos([...todos, newTodo]);
           setValue("");
     }
