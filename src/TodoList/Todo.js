@@ -22,13 +22,12 @@ const Todo = () => {
             return;
         }
       
-          const newTodo = { id: contador, name: value, isCompleted: false };
-          setTodos([...todos, newTodo]);
-          setValue("");
+        const newTodo = { id: contador, name: value, isCompleted: false };
+        setTodos([...todos, newTodo]);
+        setValue("");
     }
 
     return (
-        //Me gustaria aumentar la sangria a 1.5
         <div>
             <InputTodo ChangeInput={handleAddTodo} Value={value} ClickButton={addList}/>
             <ListTodo Todos={todos} setTodos={setTodos}/>

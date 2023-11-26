@@ -30,7 +30,7 @@ const ListTodo = ({Todos, setTodos}) => {
 
                         <span style={
                                 {backgroundColor: todo.isCompleted ? 'green' : 'red', color:'white', fontWeight:'bold'}
-                            }>{ todo.isCompleted ? 'Hecho' : 'Pendiente'}</span>
+                        }>{ todo.isCompleted ? 'Hecho' : 'Pendiente'}</span>
                     </li>
                 ))}
             </ul>
